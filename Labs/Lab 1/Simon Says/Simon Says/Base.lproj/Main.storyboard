@@ -79,27 +79,26 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jeZ-Y7-neZ">
-                                <rect key="frame" x="0.0" y="74" width="414" height="294"/>
+                                <rect key="frame" x="0.0" y="60.333333333333343" width="414" height="307.66666666666663"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fY8-tb-7gj">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Simon Says" id="NQS-Wr-Ndb"/>
-                                </items>
-                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Colors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDT-mb-BTb">
+                                <rect key="frame" x="114.66666666666667" y="19.999999999999996" width="184.66666666666663" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fY8-tb-7gj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3r7-oj-CSc"/>
                             <constraint firstItem="jeZ-Y7-neZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8cc-e6-GSM"/>
                             <constraint firstItem="ww8-hU-tDA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="9Od-Wr-lpW"/>
+                            <constraint firstItem="rDT-mb-BTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KPq-i6-ZvR"/>
                             <constraint firstItem="ww8-hU-tDA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-10" id="NSY-uB-mxS"/>
                             <constraint firstItem="ww8-hU-tDA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="PDL-N3-Z3N"/>
-                            <constraint firstItem="fY8-tb-7gj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UfL-uz-8se"/>
-                            <constraint firstItem="fY8-tb-7gj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="cXx-He-qat"/>
+                            <constraint firstItem="rDT-mb-BTb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QTp-vn-EXv"/>
+                            <constraint firstItem="jeZ-Y7-neZ" firstAttribute="top" secondItem="rDT-mb-BTb" secondAttribute="bottom" id="VMO-rB-8iA"/>
                             <constraint firstItem="jeZ-Y7-neZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jQU-xQ-lJU"/>
                             <constraint firstItem="ww8-hU-tDA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="lv2-H2-jHZ"/>
-                            <constraint firstItem="jeZ-Y7-neZ" firstAttribute="top" secondItem="fY8-tb-7gj" secondAttribute="bottom" constant="10" id="rin-67-PcR"/>
                             <constraint firstItem="jeZ-Y7-neZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-10" id="svs-xM-PcD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -109,7 +108,7 @@
                         <outlet property="greenButton" destination="EzR-tb-XRT" id="b3h-3S-Sxy"/>
                         <outlet property="imageView" destination="jeZ-Y7-neZ" id="ALR-Jm-DeF"/>
                         <outlet property="redButton" destination="lov-Yg-Oia" id="xax-L8-Z6v"/>
-                        <outlet property="yellowButon" destination="MYN-n7-Zi2" id="1K4-FK-N7I"/>
+                        <outlet property="yellowButton" destination="MYN-n7-Zi2" id="vZf-YY-miE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

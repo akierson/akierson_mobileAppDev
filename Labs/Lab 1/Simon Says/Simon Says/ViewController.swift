@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     // Add references to buttons to allow for color change
-    @IBOutlet weak var yellowButon: UIButton!
+    @IBOutlet weak var yellowButton: UIButton!
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var blueButton: UIButton!
@@ -32,7 +32,6 @@ class ViewController: UIViewController {
     @IBAction func blueTap(_ sender: UIButton) {
         imageView.image = UIImage(named: "blue")
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
