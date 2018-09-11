@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,17 +16,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Simon_Says" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ww8-hU-tDA">
-                                <rect key="frame" x="10" y="378" width="394" height="348"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="ww8-hU-tDA">
+                                <rect key="frame" x="10" y="51" width="220" height="259"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sFr-Yz-5IV">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="174"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sFr-Yz-5IV">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="125"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYN-n7-Zi2">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="174"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="125"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Yellow">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -36,7 +36,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lov-Yg-Oia">
-                                                <rect key="frame" x="197" y="0.0" width="197" height="174"/>
+                                                <rect key="frame" x="115" y="0.0" width="105" height="125"/>
                                                 <color key="backgroundColor" red="1" green="0.49803921568627452" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Red">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -47,11 +47,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zv4-1G-ibH">
-                                        <rect key="frame" x="0.0" y="174" width="394" height="174"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zv4-1G-ibH">
+                                        <rect key="frame" x="0.0" y="134" width="220" height="125"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzR-tb-XRT">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="174"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="125"/>
                                                 <color key="backgroundColor" red="0.5" green="1" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Green">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -61,7 +61,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssT-sy-ap6">
-                                                <rect key="frame" x="197" y="0.0" width="197" height="174"/>
+                                                <rect key="frame" x="115" y="0.0" width="105" height="125"/>
                                                 <color key="backgroundColor" red="0.5" green="0.5" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Blue">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -79,29 +79,68 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jeZ-Y7-neZ">
-                                <rect key="frame" x="0.0" y="60.333333333333343" width="414" height="307.66666666666663"/>
+                                <rect key="frame" x="240" y="40.5" width="240" height="279.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Colors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDT-mb-BTb">
-                                <rect key="frame" x="114.66666666666667" y="19.999999999999996" width="184.66666666666663" height="40.666666666666657"/>
+                                <rect key="frame" x="148" y="0.0" width="184.5" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="M3N-gH-MZM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="M3N-gH-MZM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="M3N-gH-MZM"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jeZ-Y7-neZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8cc-e6-GSM"/>
                             <constraint firstItem="ww8-hU-tDA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="9Od-Wr-lpW"/>
+                            <constraint firstItem="ww8-hU-tDA" firstAttribute="top" secondItem="rDT-mb-BTb" secondAttribute="bottom" constant="8" symbolic="YES" id="FoX-Y6-cVl">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="rDT-mb-BTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KPq-i6-ZvR"/>
+                            <constraint firstItem="jeZ-Y7-neZ" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="M7I-Ag-khU"/>
                             <constraint firstItem="ww8-hU-tDA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-10" id="NSY-uB-mxS"/>
                             <constraint firstItem="ww8-hU-tDA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="PDL-N3-Z3N"/>
                             <constraint firstItem="rDT-mb-BTb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QTp-vn-EXv"/>
                             <constraint firstItem="jeZ-Y7-neZ" firstAttribute="top" secondItem="rDT-mb-BTb" secondAttribute="bottom" id="VMO-rB-8iA"/>
                             <constraint firstItem="jeZ-Y7-neZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jQU-xQ-lJU"/>
                             <constraint firstItem="ww8-hU-tDA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="lv2-H2-jHZ"/>
+                            <constraint firstItem="jeZ-Y7-neZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m3W-Ab-oRP"/>
+                            <constraint firstItem="ww8-hU-tDA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-10" id="pGp-a2-EhR"/>
                             <constraint firstItem="jeZ-Y7-neZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-10" id="svs-xM-PcD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="M7I-Ag-khU"/>
+                                <exclude reference="m3W-Ab-oRP"/>
+                                <exclude reference="FoX-Y6-cVl"/>
+                                <exclude reference="pGp-a2-EhR"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="M7I-Ag-khU"/>
+                                <exclude reference="jQU-xQ-lJU"/>
+                                <include reference="m3W-Ab-oRP"/>
+                                <exclude reference="svs-xM-PcD"/>
+                                <exclude reference="9Od-Wr-lpW"/>
+                                <include reference="FoX-Y6-cVl"/>
+                                <exclude reference="PDL-N3-Z3N"/>
+                                <include reference="pGp-a2-EhR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="blueButton" destination="ssT-sy-ap6" id="C8V-Ia-gYc"/>
