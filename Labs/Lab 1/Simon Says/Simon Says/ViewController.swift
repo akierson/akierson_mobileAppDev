@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     // Image View outlet
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageLabel: UILabel!
     
     // Add references to buttons to allow for color change
     @IBOutlet weak var yellowButton: UIButton!
@@ -22,15 +23,19 @@ class ViewController: UIViewController {
     // One per button for recall in main function
     @IBAction func yellowTap(_ sender: UIButton) {
         imageView.image = UIImage(named: "yellow")
+        imageLabel.text = "Yellow Banana"
     }
     @IBAction func redTap(_ sender: UIButton) {
         imageView.image = UIImage(named: "red")
+        imageLabel.text = "Red Apple"
     }
     @IBAction func greenTap(_ sender: UIButton) {
         imageView.image = UIImage(named: "green")
+        imageLabel.text = "Green Avocado"
     }
     @IBAction func blueTap(_ sender: UIButton) {
         imageView.image = UIImage(named: "blue")
+        imageLabel.text = "Blue Satanists"
     }
     
     override func viewDidLoad() {
