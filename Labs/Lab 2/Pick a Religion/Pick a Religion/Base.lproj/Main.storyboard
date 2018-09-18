@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,44 +16,45 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pick_a_Religion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cI9-Yo-SG0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="32"/>
                                 <items>
-                                    <navigationItem title="Pick a Religion" id="UL4-Za-GHm">
+                                    <navigationItem title="Fruit Fight" id="UL4-Za-GHm">
                                         <rightBarButtonItems>
-                                            <barButtonItem style="plain" id="DRr-QX-m7M">
+                                            <barButtonItem id="DRr-QX-m7M">
                                                 <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="xgM-3l-l7N">
-                                                    <rect key="frame" x="308" y="6.5" width="51" height="31"/>
+                                                    <rect key="frame" x="413" y="0.5" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </switch>
                                                 <connections>
                                                     <action selector="pcButtonFunc:" destination="BYZ-38-t0r" id="NQV-VG-g6T"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="PC" id="FRw-dP-0Nn"/>
+                                            <barButtonItem title="PG" style="done" id="FRw-dP-0Nn"/>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-wH-Km5" userLabel="Stat Controls">
-                                <rect key="frame" x="10" y="535" width="356" height="78"/>
+                                <rect key="frame" x="10" y="160" width="461" height="78"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-sh-rqZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="356" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="461" height="29"/>
                                         <segments>
-                                            <segment title="Christianity"/>
-                                            <segment title="Judaism"/>
+                                            <segment title="Strawberry"/>
+                                            <segment title="Banana"/>
                                             <segment title="Satanism"/>
+                                            <segment title="Avo"/>
                                         </segments>
                                         <connections>
-                                            <action selector="religionPickerFunc:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ik6-iY-Yp6"/>
+                                            <action selector="fruitPickerFunc:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rwg-Fs-0ap"/>
                                         </connections>
                                     </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="At5-vL-odt">
-                                        <rect key="frame" x="0.0" y="48" width="356" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="At5-vL-odt">
+                                        <rect key="frame" x="0.0" y="48" width="309.5" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O6-x1-jKo">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
@@ -64,27 +65,28 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="mvA-gI-Sje">
-                                                <rect key="frame" x="78" y="0.0" width="280" height="31"/>
-                                                <connections>
-                                                    <action selector="religionLvlFunc:" destination="BYZ-38-t0r" eventType="valueChanged" id="dv6-KO-Y7n"/>
-                                                </connections>
+                                            <slider opaque="NO" multipleTouchEnabled="YES" contentMode="redraw" semanticContentAttribute="spatial" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" value="3" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="mvA-gI-Sje">
+                                                <rect key="frame" x="78" y="0.0" width="233.5" height="31"/>
                                             </slider>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="mvA-gI-Sje" firstAttribute="trailing" secondItem="At5-vL-odt" secondAttribute="trailing" id="2Tq-cU-QMb"/>
+                                            <constraint firstItem="mvA-gI-Sje" firstAttribute="leading" secondItem="4O6-x1-jKo" secondAttribute="trailing" constant="10" id="Q9r-Nq-k74"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="qeb-sh-rqZ" firstAttribute="centerX" secondItem="0Fh-wH-Km5" secondAttribute="centerX" id="lFK-FU-HHC"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7JZ-0w-scz" userLabel="Religion Display">
-                                <rect key="frame" x="0.0" y="74" width="375" height="451"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7JZ-0w-scz" userLabel="Fruit Display">
+                                <rect key="frame" x="0.0" y="42" width="480" height="108"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="im4-lG-0yW">
-                                        <rect key="frame" x="10" y="0.0" width="355" height="220.5"/>
+                                        <rect key="frame" x="0.0" y="0.5" width="235" height="107"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What religion should I be?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vZB-lC-ST3">
-                                        <rect key="frame" x="10" y="230.5" width="355" height="220.5"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pick Your Team!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vZB-lC-ST3">
+                                        <rect key="frame" x="245" y="0.5" width="235" height="107"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -112,18 +114,18 @@
                             <constraint firstItem="0Fh-wH-Km5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-9" id="JZO-KN-DuV"/>
                             <constraint firstItem="cI9-Yo-SG0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Q3W-LA-bIs"/>
                             <constraint firstItem="7JZ-0w-scz" firstAttribute="bottom" secondItem="0Fh-wH-Km5" secondAttribute="top" constant="-10" id="ney-UP-VnB"/>
-                            <constraint firstItem="0Fh-wH-Km5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-10" id="xQw-WF-PZk"/>
+                            <constraint firstItem="0Fh-wH-Km5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-50" id="xQw-WF-PZk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="fruitLevel" destination="mvA-gI-Sje" id="4Jn-L3-lLr"/>
+                        <outlet property="fruitPicker" destination="qeb-sh-rqZ" id="KUF-CY-EkL"/>
                         <outlet property="imageView" destination="im4-lG-0yW" id="hyu-5F-hyW"/>
                         <outlet property="pcButton" destination="DRr-QX-m7M" id="xic-xd-Qpw"/>
-                        <outlet property="relgionPickerFunc" destination="qeb-sh-rqZ" id="hRd-Qp-Xb6"/>
-                        <outlet property="religionLevel" destination="mvA-gI-Sje" id="8eB-Zt-6RH"/>
-                        <outlet property="religionPicker" destination="qeb-sh-rqZ" id="usP-9o-ggE"/>
+                        <outlet property="pgSwitch" destination="xgM-3l-l7N" id="upM-mu-UCi"/>
                         <outlet property="textBox" destination="vZB-lC-ST3" id="ZJa-Cv-rRr"/>
                     </connections>
                 </viewController>
