@@ -28,20 +28,20 @@
                                                 <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="xgM-3l-l7N">
                                                     <rect key="frame" x="413" y="0.5" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="pcSwitchFunc:" destination="BYZ-38-t0r" eventType="valueChanged" id="guC-hR-G8Q"/>
+                                                    </connections>
                                                 </switch>
-                                                <connections>
-                                                    <action selector="pcButtonFunc:" destination="BYZ-38-t0r" id="NQV-VG-g6T"/>
-                                                </connections>
                                             </barButtonItem>
                                             <barButtonItem title="PG" style="done" id="FRw-dP-0Nn"/>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-wH-Km5" userLabel="Stat Controls">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-wH-Km5" userLabel="Stat Controls">
                                 <rect key="frame" x="10" y="160" width="461" height="78"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-sh-rqZ">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-sh-rqZ">
                                         <rect key="frame" x="0.0" y="0.0" width="461" height="29"/>
                                         <segments>
                                             <segment title="Strawberry"/>
@@ -53,26 +53,25 @@
                                             <action selector="fruitPickerFunc:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rwg-Fs-0ap"/>
                                         </connections>
                                     </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="At5-vL-odt">
-                                        <rect key="frame" x="0.0" y="48" width="309.5" height="30"/>
+                                    <stackView opaque="NO" contentMode="center" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="At5-vL-odt">
+                                        <rect key="frame" x="0.0" y="48" width="461" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O6-x1-jKo">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level ??" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O6-x1-jKo">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="RRJ-Pb-djj"/>
+                                                    <constraint firstAttribute="width" constant="70" id="RRJ-Pb-djj"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" multipleTouchEnabled="YES" contentMode="redraw" semanticContentAttribute="spatial" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" value="3" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="mvA-gI-Sje">
-                                                <rect key="frame" x="78" y="0.0" width="233.5" height="31"/>
+                                            <slider opaque="NO" multipleTouchEnabled="YES" contentMode="redraw" semanticContentAttribute="spatial" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" value="3" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="mvA-gI-Sje">
+                                                <rect key="frame" x="78" y="0.0" width="385" height="31"/>
+                                                <connections>
+                                                    <action selector="fruitLevelFunc:" destination="BYZ-38-t0r" eventType="valueChanged" id="6o2-dr-VlS"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="mvA-gI-Sje" firstAttribute="trailing" secondItem="At5-vL-odt" secondAttribute="trailing" id="2Tq-cU-QMb"/>
-                                            <constraint firstItem="mvA-gI-Sje" firstAttribute="leading" secondItem="4O6-x1-jKo" secondAttribute="trailing" constant="10" id="Q9r-Nq-k74"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -124,7 +123,7 @@
                         <outlet property="fruitLevel" destination="mvA-gI-Sje" id="4Jn-L3-lLr"/>
                         <outlet property="fruitPicker" destination="qeb-sh-rqZ" id="KUF-CY-EkL"/>
                         <outlet property="imageView" destination="im4-lG-0yW" id="hyu-5F-hyW"/>
-                        <outlet property="pcButton" destination="DRr-QX-m7M" id="xic-xd-Qpw"/>
+                        <outlet property="levelLabel" destination="4O6-x1-jKo" id="bjb-oM-Y9z"/>
                         <outlet property="pgSwitch" destination="xgM-3l-l7N" id="upM-mu-UCi"/>
                         <outlet property="textBox" destination="vZB-lC-ST3" id="ZJa-Cv-rRr"/>
                     </connections>

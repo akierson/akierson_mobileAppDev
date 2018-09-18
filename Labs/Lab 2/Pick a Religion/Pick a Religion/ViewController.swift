@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     // Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textBox: UITextView!
+    @IBOutlet weak var levelLabel: UILabel!
     // Control Outlets
     @IBOutlet weak var pgSwitch: UISwitch!
     @IBOutlet weak var fruitLevel: UISlider!
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
     
     func updateText() {
         let expletive = pgSwitch.isOn ? "" : "fucking"
-        let f_level = fruitLevel.value
+        let f_level = Int(fruitLevel.value)
         let f_type = fruitPicker.selectedSegmentIndex
         
         // Switch case for different fruits
@@ -50,13 +51,13 @@ class ViewController: UIViewController {
                 Base Level Cultist
                 + Speed:
                 + Money:
-                - Like Scientologists but worse
+                - Like \(expletive) Scientologists but worse
                 """
             case 5...7:
                 textBox.text = """
                 Tech Reviewer Cultist
-                + Acquire speed:
-                + Money:
+                + Acquire speed
+                + Money: \(expletive) \(f_level) thousand dollars
                 - Empathy:
                 """
             case 8...:
@@ -91,7 +92,7 @@ class ViewController: UIViewController {
                 Predator Naner
                 + Dreads
                 + Brownness: \(f_level)
-                + Like Really, really cool
+                + Like Really, really \(expletive) cool
                 """
             default:
                 print("Level Control out of range")
@@ -102,18 +103,21 @@ class ViewController: UIViewController {
             case 0...4:
                 textBox.text = """
                 Bluetallica
-                + Base Tier coolness
-                +
+                + Base tier coolness
+                + Wicked guitar rifts
+                - Too normal
                 """
             case 5...7:
                 textBox.text = """
                 Blue Maiden
-                +
+                + Epic
+                + Epic
+                + Epic
                 """
             case 8...:
                 textBox.text = """
                 Nowegian Blue Metal Band
-                + Probably  Dead
+                + Probably \(expletive) Dead
                 + Is part of the forest
                 - Inacessible to most people
                 """
@@ -123,26 +127,26 @@ class ViewController: UIViewController {
         // Avocado
         case 3:
             switch f_level{
-            case 0...4:
+            case ...4:
                 textBox.text = """
-                Split
-                + Eyepatch
-                + Brownness:
-                - Phallic
+                Pleb
+                + Massive eye
+                + Like Mother Nature's boogers
+                - No legs
                 """
             case 5...7:
                 textBox.text = """
-                Rambonana
-                + Two Eyepatches
-                + Brownness
-                + Really Cool
+                Transcendent
+                + Hovers, \(expletive) awesome
+                + Beholder eye
+                + Like Mother Nature's boogers
                 """
             case 8...:
                 textBox.text = """
-                Predator Naner
-                + Dreads
-                + Brownness
-                + Like Really, really cool
+                Diety
+                + Made of green \(expletive) slime
+                + Like Mother Nature's booger
+                - Pulls the race card
                 """
             default:
                 print("Level Control out of range")
@@ -157,6 +161,9 @@ class ViewController: UIViewController {
         // change fonts at 5, 8
         // capitalize on evens
     }
+    func updateLevel() {
+        levelLabel.text = "Level " + String(Int(fruitLevel.value))
+    }
     // Control Functions
     @IBAction func pcButtonFunc(_ sender: UIBarButtonItem) {
         // Disable all options and set text to "You are not prepared"?
@@ -164,6 +171,17 @@ class ViewController: UIViewController {
     @IBAction func fruitPickerFunc(_ sender: UISegmentedControl) {
         updateImage()
         updateText()
+        updateLevel()
+    }
+    @IBAction func fruitLevelFunc(_ sender: UISlider) {
+        updateImage()
+        updateText()
+        updateLevel()
+    }
+    @IBAction func pcSwitchFunc(_ sender: UISwitch) {
+        updateImage()
+        updateText()
+        updateLevel()
     }
     
     
