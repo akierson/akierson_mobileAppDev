@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     // Helper functions
     func updateImage() {
-        let f_level = Int(fruitLevel.value/3.0)
+        let f_level = Int(fruitLevel.value/3.5)
         let f_type = fruitPicker.selectedSegmentIndex
         switch f_type {
         case 0:
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     func updateText() {
-        let expletive = pgSwitch.isOn ? "" : "fucking"
+        let expletive = pgSwitch.isOn ? "" : "FUCKING"
         let f_level = Int(fruitLevel.value)
         let f_type = fruitPicker.selectedSegmentIndex
         
@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         switch f_type {
         // Apples
         case 0:
+            textBox.textColor = UIColor(red: 0.5, green: 0, blue: 0, alpha: 1)
             switch f_level{
             case 0...4:
                 textBox.text = """
@@ -72,6 +73,7 @@ class ViewController: UIViewController {
             }
         //Bananas
         case 1:
+            textBox.textColor = UIColor(red: 0.5, green: 0.5, blue: 0, alpha: 1)
             switch f_level{
             case 0...4:
                 textBox.text = """
@@ -99,6 +101,7 @@ class ViewController: UIViewController {
             }
         // Blue Berries
         case 2:
+            textBox.textColor = UIColor(red: 0, green: 0, blue: 0.5, alpha: 1)
             switch f_level{
             case 0...4:
                 textBox.text = """
@@ -126,6 +129,7 @@ class ViewController: UIViewController {
             }
         // Avocado
         case 3:
+            textBox.textColor = UIColor(red: 0, green: 0.5, blue: 0, alpha: 1)
             switch f_level{
             case ...4:
                 textBox.text = """
@@ -154,12 +158,6 @@ class ViewController: UIViewController {
         default:
             break
         }
-        // update some stats based on level
-        // update color by religion and level
-        // all start black go to (yellow, blue, black)
-        // add more text at 5, 8
-        // change fonts at 5, 8
-        // capitalize on evens
     }
     func updateLevel() {
         levelLabel.text = "Level " + String(Int(fruitLevel.value))

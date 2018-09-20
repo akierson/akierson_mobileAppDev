@@ -81,7 +81,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7JZ-0w-scz" userLabel="Fruit Display">
                                 <rect key="frame" x="0.0" y="42" width="480" height="108"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="im4-lG-0yW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="im4-lG-0yW">
                                         <rect key="frame" x="0.0" y="0.5" width="235" height="107"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pick Your Team!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vZB-lC-ST3">
