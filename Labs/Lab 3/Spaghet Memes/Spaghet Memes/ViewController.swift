@@ -75,6 +75,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pastaVolLabel.text = p_vol.description
         sauceVolLabel.text = s_vol.description
         SpagWeightLabel.text = sp_weight.description
+        
+        
     }
     
     // Vhange text when done editting a field
@@ -97,6 +99,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // Updates text on segmented control change
     @IBAction func segControlChange(_ sender: UISegmentedControl) {
+        if sauceSegControl.selectedSegmentIndex == 2 {
+            //create a UIAlertController object
+            let alert = UIAlertController(title: "S A U C E", message: "Are you prepared for the sauce?", preferredStyle: UIAlertControllerStyle.alert)
+            //create a UIAlertAction object for the button
+            let cancelAction = UIAlertAction(title: "N A Y", style:UIAlertActionStyle.cancel, handler: { action in
+                self.sauceSegControl.selectedSegmentIndex = 0;
+            })
+            alert.addAction(cancelAction) //adds the alert action to the alert object
+            let okAction=UIAlertAction(title: "O K A Y", style: UIAlertActionStyle.default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
         updateText()
     }
     
