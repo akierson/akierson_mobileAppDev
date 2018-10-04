@@ -33,8 +33,10 @@ class MyViewController: UIViewController, UITextFieldDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let scene1 = segue.destination as! ViewController
         // Get the new view controller using segue.destinationViewController.
-        if textField.text!.isEmpty == False {
+        if textField.text!.isEmpty == false {
+            scene1.textLabel.textString = textField.text
             
         }
         

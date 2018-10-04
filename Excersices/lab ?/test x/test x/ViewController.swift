@@ -11,10 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
-    var text = test()
+    var textLabel = test()
     
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue){
-    
+        label.text = textLabel.textString
     }
     
     override func viewDidLoad() {
