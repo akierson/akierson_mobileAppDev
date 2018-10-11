@@ -24,16 +24,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZZu-Ng-krw">
                                         <rect key="frame" x="47.5" y="0.0" width="185.5" height="171.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've studied for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4t-fJ-Evh">
-                                                <rect key="frame" x="24" y="0.0" width="137.5" height="86"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEK-fA-TVs">
+                                                <rect key="frame" x="72.5" y="0.0" width="40" height="86"/>
+                                                <state key="normal" title="Study"/>
+                                                <connections>
+                                                    <action selector="studyTapFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bwj-Sq-I5u"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gi4-m2-euw">
                                                 <rect key="frame" x="0.0" y="86" width="185.5" height="85.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -50,11 +51,12 @@
                                                             <constraint firstAttribute="width" constant="50" id="6vm-aM-HTN"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kfV-Pn-Wtg">
                                                         <rect key="frame" x="63" y="13.5" width="219" height="31"/>
+                                                        <color key="minimumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="oscChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="vEP-dC-a4n"/>
                                                         </connections>
@@ -70,11 +72,12 @@
                                                             <constraint firstAttribute="width" constant="50" id="vog-sa-Uav"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DQQ-fJ-4la">
                                                         <rect key="frame" x="63" y="0.0" width="219" height="58.5"/>
+                                                        <color key="minimumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="volChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="uMG-C4-Vw1"/>
                                                         </connections>
@@ -90,11 +93,12 @@
                                                             <constraint firstAttribute="width" constant="50" id="tlP-On-Bjq"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vUW-gL-0ec">
                                                         <rect key="frame" x="63" y="0.0" width="219" height="58"/>
+                                                        <color key="minimumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="hrzChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cNF-fp-qfc"/>
                                                         </connections>
@@ -110,7 +114,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dMo-p1-E6y" secondAttribute="bottom" constant="40" id="4JT-mL-E2X"/>
                             <constraint firstItem="dMo-p1-E6y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9qE-Mj-n4B"/>
@@ -122,7 +126,7 @@
                     <connections>
                         <outlet property="hrzSlider" destination="vUW-gL-0ec" id="BjT-y7-bkH"/>
                         <outlet property="oscSlider" destination="kfV-Pn-Wtg" id="IgG-QY-Ax2"/>
-                        <outlet property="studyText" destination="m4t-fJ-Evh" id="jxg-Xa-RlS"/>
+                        <outlet property="studyText" destination="DEK-fA-TVs" id="zHx-2X-iWg"/>
                         <outlet property="timerLabel" destination="Gi4-m2-euw" id="P3t-A2-tz9"/>
                         <outlet property="volSlider" destination="DQQ-fJ-4la" id="aMH-jB-QlO"/>
                     </connections>
@@ -131,4 +135,5 @@
             </objects>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

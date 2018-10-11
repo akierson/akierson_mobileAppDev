@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A429731A216FD2A100E562A8 /* noise.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4297319216FD2A100E562A8 /* noise.wav */; };
 		A4CEF05F2163E074009A5A3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CEF05E2163E074009A5A3E /* AppDelegate.swift */; };
 		A4CEF0612163E074009A5A3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CEF0602163E074009A5A3E /* ViewController.swift */; };
 		A4CEF0642163E074009A5A3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CEF0622163E074009A5A3E /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A4297319216FD2A100E562A8 /* noise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noise.wav; sourceTree = "<group>"; };
 		A4CEF05B2163E074009A5A3E /* Noise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CEF05E2163E074009A5A3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4CEF0602163E074009A5A3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				A4CEF0652163E075009A5A3E /* Assets.xcassets */,
 				A4CEF0672163E075009A5A3E /* LaunchScreen.storyboard */,
 				A4CEF06A2163E076009A5A3E /* Info.plist */,
+				A4297319216FD2A100E562A8 /* noise.wav */,
 			);
 			path = Noise;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 				A4CEF0692163E075009A5A3E /* LaunchScreen.storyboard in Resources */,
 				A4CEF0662163E075009A5A3E /* Assets.xcassets in Resources */,
 				A4CEF0642163E074009A5A3E /* Main.storyboard in Resources */,
+				A429731A216FD2A100E562A8 /* noise.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
