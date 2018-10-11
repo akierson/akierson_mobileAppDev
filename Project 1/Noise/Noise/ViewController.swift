@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 
 class ViewController: UIViewController {
     // TODO: Add Background image, add noise, color oscillations, timer
@@ -20,10 +21,20 @@ class ViewController: UIViewController {
     var time : intmax_t?
     
     // Noise
-    var player : AVAudioPlayer?
+    var max_vol : float_t = 1.0
+    var vol : float_t?
+    var hrz : float_t?
+    var timerOsc = Timer()
+    var oscVol : float_t?
     
-//    var max_vol
-//    var hrz
+    // AVAudio Nodes
+    let engine = AVAudioEngine()
+    let speedControl = AVAudioUnitVarispeed()
+    let pitchControl = AVAudioUnitTimePitch()
+    let audioPlayer = AVAudioPlayerNode()
+    let file = AVAudioFile()
+    // playback repeat timer
+    var playbackTimer = Timer()
     
     // Vars
     @IBOutlet weak var studyText: UIButton!
@@ -34,38 +45,41 @@ class ViewController: UIViewController {
     
     // Functions
     //      helper func
-    
-    // Code based on https://stackoverflow.com/questions/32036146/how-to-play-a-sound-using-swift/47874593
-    func playSound() {
+    func startEngine() throws {
+        
+        // Get url of noise.wav file
         guard let url = Bundle.main.url(forResource: "noise", withExtension: "wav")
+            else {
+                print("Couldn't find file")
+                return
+        }
+        
+        // Load File
+        guard let file = try? AVAudioFile(forReading: url)
             else {
                 print("File failed to load")
                 return
         }
         
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            try AVAudioSession.sharedInstance().setActive(true)
-            
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-            
-            // Set Player params
-            player?.numberOfLoops = -1
-            player?.volume = volSlider.value
-            // add osc, hrz
-            guard let player = player
-                else {
-                    print("Player failed to load")
-                    return
-            }
-            
-            player.play()
-            
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        // Connect nodes to engine
+        engine.attach(audioPlayer)
+        engine.attach(pitchControl)
+        engine.attach(speedControl)
+        
+        // Connect nodes
+        engine.connect(audioPlayer, to: speedControl, format: nil)
+        engine.connect(speedControl, to: pitchControl, format: nil)
+        engine.connect(pitchControl, to: engine.mainMixerNode, format: nil)
+        
+        // Start audio player
+        audioPlayer.scheduleFile(file, at:nil)
+        
+        
+        //start engine
+        try engine.start()
     }
-    //      change studied text
+    
+    // Change studied text
     func updateStudiedText() {
         if studyText.currentTitle == "Study" {
             studyText.setTitle("Studied For", for: .normal)
@@ -73,7 +87,7 @@ class ViewController: UIViewController {
             studyText.setTitle("Study", for: .normal)
         }
     }
-    //      update time
+    // Update time
     @objc func updateTime() {
         time = time! + 1
         let h = time! / 3600
@@ -81,7 +95,34 @@ class ViewController: UIViewController {
         let s = time! % 60
         
         timerLabel.text = String(format: "%02d", h) + ":" + String(format: "%02d", m) + ":" + String(format: "%02d", s)
+    }
+    @objc func updateOsc() {
+        if oscSlider.value == 0.0 {
+            vol = max_vol
+        } else {
+            oscVol = oscVol! + 0.01
+            vol = max_vol * ((sin(Float(oscVol!)/oscSlider.value) + 1) * 0.5) + 0.1
+            audioPlayer.volume = vol!
+        }
+    }
+    
+    @objc func updatePlayback() {
+        audioPlayer.stop()
+        // Get url of noise.wav file
+        guard let url = Bundle.main.url(forResource: "noise", withExtension: "wav")
+            else {
+                print("Couldn't find file")
+                return
+        }
         
+        // Load File
+        guard let file = try? AVAudioFile(forReading: url)
+            else {
+                print("File failed to load")
+                return
+        }
+        audioPlayer.scheduleFile(file, at:nil)
+        audioPlayer.play()
     }
     
     // when Study tapped
@@ -90,35 +131,48 @@ class ViewController: UIViewController {
         if !timer.isValid {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
             updateStudiedText()
+            playbackTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.updatePlayback), userInfo: nil, repeats: true)
+            
             // Start sound
-            playSound()
+            audioPlayer.play()
         }
         // End timer and phase out noise
         else {
             timer.invalidate()
+            playbackTimer.invalidate()
+            timerOsc.invalidate()
             updateStudiedText()
             // Stop Noise
+            audioPlayer.stop()
         }
     }
     
     // when osc changed
     @IBAction func oscChanged(_ sender: UISlider) {
-        
+        timerOsc = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateOsc), userInfo: nil, repeats: true)
     }
     
     // when vol changed
     @IBAction func volChanged(_ sender: UISlider) {
-        
+        max_vol = volSlider.value
+        vol = max_vol
+        audioPlayer.volume = vol!
     }
     
     // when hrz changed
     @IBAction func hrzChanged(_ sender: UISlider) {
-        
+        pitchControl.pitch = hrzSlider.value
     }
     
     override func viewDidLoad() {
         // Start timer and white noise
         time = 0
+        oscVol = 0
+        do {
+            try startEngine()
+        } catch {
+            print("error")
+        }
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
