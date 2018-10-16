@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     
     // Functions
     //      helper func
+    // adapted from https://www.hackingwithswift.com/example-code/media/how-to-control-the-pitch-and-speed-of-audio-using-avaudioengine
     func startEngine() throws {
         
         // Get url of noise.wav file
@@ -184,6 +185,9 @@ class ViewController: UIViewController {
         } catch {
             print("error")
         }
+        
+        // turn off auto sleep
+        UIApplication.shared.isIdleTimerDisabled = true
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
