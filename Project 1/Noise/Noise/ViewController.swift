@@ -107,7 +107,6 @@ class ViewController: UIViewController {
     }
     
     @objc func updatePlayback() {
-        audioPlayer.stop()
         // Get url of noise.wav file
         guard let url = Bundle.main.url(forResource: "noise", withExtension: "wav")
             else {
@@ -131,8 +130,20 @@ class ViewController: UIViewController {
         if !timer.isValid {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
             updateStudiedText()
-            playbackTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.updatePlayback), userInfo: nil, repeats: true)
+            playbackTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.updatePlayback), userInfo: nil, repeats: true)
+            guard let url = Bundle.main.url(forResource: "noise", withExtension: "wav")
+                else {
+                    print("Couldn't find file")
+                    return
+            }
             
+            // Load File
+            guard let file = try? AVAudioFile(forReading: url)
+                else {
+                    print("File failed to load")
+                    return
+            }
+            audioPlayer.scheduleFile(file, at:nil)
             // Start sound
             audioPlayer.play()
         }
