@@ -106,6 +106,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        // Unsure how to make sure numbers are in field while still having return key available
         if !(textField.text?.isEmpty)! {
             if Double(textField.text!)! < 30.0 {
                 //create a UIAlertController object
